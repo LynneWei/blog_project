@@ -1,0 +1,35 @@
+<h1>Listing articles</h1>
+
+<table>
+  <thead>
+  	<tr>
+  	  <th>title</th>
+  	  <th>text</th>
+      <th colspan="3">操作</th>
+  	</tr>
+  </thead>
+  <tbody>
+  	<% @article.each do |article| %>
+  	  <tr>
+  	  	<td><%= article.title %></td>
+  	  	<td><%= article.text %></td>
+  	  	<td><%= link_to 'show', article_path(article) %></td>
+        <td><%= link_to 'edit', edit_article_path(article) %></td>
+        <td><%= link_to 'destroy', article_path(article), method: :delete, data: {confirm: "确定删除?"} %></td>
+  	  </tr>
+  	<% end %>
+  </tbody>
+</table>
+<%= link_to 'new Article', new_article_path %>
+
+<% content_for :title do %>
+<% end %>
+
+<% content_for :meta do %>
+<% end %>
+
+<% content_for :style do %>
+<% end %>
+
+<% content_for :javascript do %>
+<% end %>
