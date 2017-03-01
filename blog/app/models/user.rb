@@ -3,3 +3,4 @@ class User < ApplicationRecord
 
   # validates :icon, presence: true, null: false, default: '', limit: 200
 end
+

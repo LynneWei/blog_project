@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   #get 'welcome/index'
+
   
   resources :articles, only: [:index,:show,:new,:create,:edit,:update,:destroy]
 
@@ -9,7 +10,8 @@ Rails.application.routes.draw do
 
   resources :leave_messages, only: [:index, :new, :create]
 
-  resources :sessions, only: :new
+  resources :users, only: [:new, :create]
+  resources :sessions, only: [:new, :create, :destroy]
 
   #resources :welcome, only: :index
   #root 'welcome#index'

@@ -19,8 +19,11 @@ class ArticlesController < ApplicationController
   def create
     # @article.title = params[:title]
     # @article.title = params[:title]
-
+    
+    logger.info "+++++++++++++++"
+    logger.info session[:user_id]
   	@article = Article.new(article_params)
+    @article.user_id = session[:user_id]
   	if @article.save
   	  redirect_to @article
     else
@@ -30,10 +33,12 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+
     @article = Article.find(params[:id])
   end
 
   def update
+    session[:user]
     @article = Article.find(params[:id])
 
     if @article.update(article_params)
@@ -44,6 +49,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+    session[:user]
     @article = Article.find(params[:id])
     @article.destroy
 
