@@ -38,9 +38,8 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    session[:user]
     @article = Article.find(params[:id])
-
+    @article.user_id = session[:user_id]
     if @article.update(article_params)
       redirect_to @article
     else
@@ -49,7 +48,6 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    session[:user]
     @article = Article.find(params[:id])
     @article.destroy
 

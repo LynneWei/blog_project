@@ -1,22 +1,46 @@
-<h1>Listing articles</h1>
+<!-- <nav class="navbar navbar-default"> -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li><a href="">首页</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="">分类文章概览<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="">技术类</a></li>
+            <li><a href="">摄影类</a></li>
+            <li><a href="">旅游类</a></li>
+          </ul>
+        </li>
+        <li><a href="">留言板</a></li>
+        <li><a href="">个人展示</a></li>
+        <li><a href="">登录</a></li>
+        <li><a href="">注册</a></li>
+      </ul>
+    </div>
+  </nav>
+<!-- </nav> -->
 
-<table>
+<h1 class="text-center">Listing articles</h1>
+
+<table class="table">
   <thead>
   	<tr>
   	  <th>title</th>
   	  <th>text</th>
-      <th colspan="3">操作</th>
+      <th colspan="2">操作</th>
   	</tr>
   </thead>
   <tbody>
   	<% @article.each do |article| %>
+      <% if article.id != 0 %>
   	  <tr>
   	  	<td><%= article.title %></td>
   	  	<td><%= article.text %></td>
   	  	<td><%= link_to 'show', article_path(article) %></td>
-        <td><%= link_to 'edit', edit_article_path(article) %></td>
+        <!-- <td> --><%#= link_to 'edit', edit_article_path(article) %><!-- </td> -->
         <td><%= link_to 'destroy', article_path(article), method: :delete, data: {confirm: "确定删除?"} %></td>
   	  </tr>
+      <% end %>
   	<% end %>
   </tbody>
 </table>

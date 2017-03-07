@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
+  # resources :comments, only: [:create, :destroy]
 
-  resources :leave_messages, only: [:index, :new, :create]
+  resources :leave_messages, only: [:index, :create]
 
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
