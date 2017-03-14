@@ -8,10 +8,10 @@ Rails.application.routes.draw do
     resources :comments
   end
   # resources :comments, only: [:create, :destroy]
-
+  resources :dashboards, only: :show
   resources :leave_messages, only: [:index, :create]
 
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :index]
   resources :sessions, only: [:new, :create, :destroy]
 
   #resources :welcome, only: :index

@@ -13,17 +13,20 @@
   <%#= link_to 'Destroy Comment', [comment.article, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
 </p> -->
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <%= comment.commenter %>
-    <div class="pull-right">
-      <%= comment.created_at %>
+<% if comment.id != nil %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <%= comment.commenter %>
+      <div class="pull-right">
+        <%= comment.created_at %>
+      </div>
+    </div>
+    <div class="panel-body">
+      <%= comment.body %>
+    </div>
+    <div class="panel-footer">
+      <%= comment.id %>
     </div>
   </div>
-  <div class="panel-body">
-    <%= comment.body %>
-  </div>
-  <div class="panel-footer">
-    <%= comment.id %>
-  </div>
-</div>
+<% end %>
+

@@ -1,24 +1,6 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav">
-      <li><a href="">首页</a></li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="">分类文章概览<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="">技术类</a></li>
-          <li><a href="">摄影类</a></li>
-          <li><a href="">旅游类</a></li>
-        </ul>
-      </li>
-      <li><a href="">留言板</a></li>
-      <li><a href="">个人展示</a></li>
-      <li><a href="">登录</a></li>
-      <li><a href="">注册</a></li>
-    </ul>
-  </div>
-</nav>
+<%= render 'shared/navigation_bar' %>
 <div class="container-fluid">
-  <h1 class="text-center">new Articles<%= link_to 'Back',articles_path, class: 'btn btn-default pull-right' %></h1>
+  <h1 class="text-center">创建文章<%= link_to 'Back',articles_path, class: 'btn btn-default pull-right' %></h1>
   <div class="row">
     <%= render 'form' %>
   </div>

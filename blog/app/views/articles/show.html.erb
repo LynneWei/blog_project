@@ -1,22 +1,4 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav">
-      <li><a href="">首页</a></li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="">分类文章概览<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="">技术类</a></li>
-          <li><a href="">摄影类</a></li>
-          <li><a href="">旅游类</a></li>
-        </ul>
-      </li>
-      <li><a href="">留言板</a></li>
-      <li><a href="">个人展示</a></li>
-      <li><a href="">登录</a></li>
-      <li><a href="">注册</a></li>
-    </ul>
-  </div>
-</nav>
+<%= render 'shared/navigation_bar' %>
 <div class="container-fluid">
   <div class="row">
     <article class="col-sm-8 col-sm-offset-2">
@@ -32,7 +14,7 @@
     <div class="col-sm-4 col-sm-offset-2">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">add a comment:</h3>
+          <h3 class="panel-title">有想法？快来给博主评论吧！</h3>
         </div>
         <div class="panel-body">
           <%= render 'comments/form' %>
@@ -43,10 +25,7 @@
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
       <h3>评论：</h3>
-      <%= @article.comments.each do |a| %>
-        <strong>a.id</strong>
-      <% end %>
-      <%= render @article.comments %>
+        <%= render @article.comments %>
     </div>
   </div>
   
