@@ -19,6 +19,10 @@
         <%= f.text_field :title, class: 'form-control' %>
       </div>
       <div class="form-group">
+        <%= f.label '分类', class: 'control-label' %>
+        <%= f.select :category, {'摄影类': '1', '技术类': '2', '生活类': '3'}, {prompt: "Please select"}, {class: 'form-control'} %>
+      </div>
+      <div class="form-group">
         <%= f.label '内容', class: 'control-label' %>
         <%= f.text_area :text, class: 'form-control' %>
       </div>

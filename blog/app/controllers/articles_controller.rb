@@ -32,20 +32,20 @@ class ArticlesController < ApplicationController
   	#render plain: params[:article].inspect
   end
 
-  def edit
+  # def edit
 
-    @article = Article.find(params[:id])
-  end
+  #   @article = Article.find(params[:id])
+  # end
 
-  def update
-    @article = Article.find(params[:id])
-    @article.user_id = session[:user_id]
-    if @article.update(article_params)
-      redirect_to @article
-    else
-      render 'edit'
-    end
-  end
+  # def update
+  #   @article = Article.find(params[:id])
+  #   @article.user_id = session[:user_id]
+  #   if @article.update(article_params)
+  #     redirect_to @article
+  #   else
+  #     render 'edit'
+  #   end
+  # end
 
   def destroy
     @article = Article.find(params[:id])
@@ -56,6 +56,6 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      params.require(:article).permit(:title,:text)
+      params.require(:article).permit(:title,:category,:text)
     end
 end
