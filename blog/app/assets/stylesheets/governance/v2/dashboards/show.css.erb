@@ -1,0 +1,54 @@
+.personal-block,
+.category-block,
+.leave-message-block {
+  width: 100%;
+  height: 1000px;
+  background-size: 100% 1000px;
+  background-attachment: fixed;
+}
+.coat-block {
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  /*opacity: 0.2;*/
+}
+.personal-block {
+  background-image: url(<%= asset_path('governance/v2/dashboards/bg-5.jpg') %>);
+}
+.category-block {
+  background-image: url(<%= asset_path('governance/v2/dashboards/bg-6.jpg') %>);
+}
+.leave-message-block {
+  background-image: url(<%= asset_path('governance/v2/dashboards/bg-1.jpg') %>);
+}
+.person-show,
+.article-category,
+.message-board {
+  width: 100%;
+  height: 500px;
+  background-color: #2ba8f9;
+  z-index: 2000;
+  position: relative;
+
+  /*position: absolute;
+  top: 30px;*/
+}
+.person-show::after,
+.article-category::after,
+.message-board::after {
+  content: '';
+  z-index: 20000;
+  border-top: 100px solid #2ba8f9;
+  border-left: 1280px solid transparent; 
+  position: absolute;
+  top: 500px;
+}
+.message-board::before,
+.article-category::before {
+  content: '';
+  z-index: 20000;
+  border-bottom: 100px solid #2ba8f9;
+  border-right: 1280px solid transparent; 
+  position: absolute;
+  top: -100px;
+}

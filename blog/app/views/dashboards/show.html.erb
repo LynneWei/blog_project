@@ -1,5 +1,28 @@
 <%= render 'shared/navigation_bar' %>  
-
+<div class="container-flow">
+  <div class="personal-block">
+    <div class="coat-block">
+      <div class="person-show">
+        
+      </div>
+    </div>
+  </div>
+  <div class="category-block">
+    <div class="coat-block">
+      <div class="article-category">
+        
+      </div>
+    </div>
+  </div>
+  <div class="leave-message-block">
+    <div class="coat-block">
+      <div class="message-board">
+        
+      </div>
+    </div>
+  </div>
+</div>
+  
 <% content_for :title do %>
 <% end %>
 
@@ -7,6 +30,7 @@
 <% end %>
 
 <% content_for :style do %>
+<%= stylesheet_link_tag 'app/assets/stylesheets/governance/v2/dashboards/show.css' %>
 <% end %>
 
 <% content_for :javascript do %>
