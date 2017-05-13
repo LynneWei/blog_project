@@ -6,6 +6,7 @@
   <thead>
   	<tr>
   	  <th>标题</th>
+      <th>分类</th>
   	  <th>内容</th>
       <th colspan="2">操作</th>
   	</tr>
@@ -15,6 +16,15 @@
       <% if article.id != 0 %>
   	  <tr>
   	  	<td><%= article.title %></td>
+        <td>
+          <% if article.category=='1' %>
+            摄影类
+          <% elsif article.category=='2' %>
+            技术类
+          <% elsif article.category=='3' %>
+            生活类
+          <% end %>
+        </td>
   	  	<td><%= article.text %></td>
   	  	<td><%= link_to '查看详情', article_path(article) %></td>
         <td><%= link_to '删除', article_path(article), method: :delete, data: {confirm: "确定删除?"} %></td>

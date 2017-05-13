@@ -4,9 +4,9 @@ class CreateArticles < ActiveRecord::Migration[5.0]
       t.string     :title
       t.text       :text
       t.string     :category
-      t.boolean    :push_praise
+      # t.boolean    :push_praise
       t.string     :click_count
-      t.string     :illustration
+      # t.string     :illustration
       t.references :user, foreign_key: true
 
       t.timestamps

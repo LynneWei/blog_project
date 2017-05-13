@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :articles do
     resources :comments
+    resources :push_praises
   end
   # resources :comments, only: [:create, :destroy]
   resources :dashboards, only: :show

@@ -1,1 +1,35 @@
 <%= render 'shared/navigation_bar' %>
+
+<div class="container-fluid">
+  <div class="person-background">
+  </div>
+  <div class="user-name">
+    <img src="<%= asset_path(@icon.icon_path) %>" class="icon-block" />
+    <p>BigBang</p>
+  </div>
+  <div class="row">
+    <h3>个性签名</h3>
+    <div class="note">
+      <p>个性签名说点什么好呢，我也不知道啊，长度应该差不多够了吧！就这样吧！哈哈哈！！！个性签名说点什么好呢，我也不知道啊，长度应该差不多够了吧！就这样吧！哈哈哈！！！个性签名说点什么好呢，我也不知道啊，长度应该差不多够了吧！就这样吧！哈哈哈！！！个性签名说点什么好呢，我也不知道啊，长度应该差不多够了吧！就这样吧！哈哈哈！！！</p><a href="">修改签名</a>
+    </div>
+  </div>
+  <div class="row">
+    <h3>最新动态</h3>
+    <div class="note">
+      <p>我是最新发布的文章，我是最新发布的文章，我是最新发布的文章，我是最新发布的文章，我是最新发布的文章，我是最新发布的文章，我是最新发布的文章，我是最新发布的文章</p><a href="">查看详情</a>
+    </div>
+  </div>
+</div>
+
+<% content_for :title do %>
+<% end %>
+
+<% content_for :meta do %>
+<% end %>
+
+<% content_for :style do %>
+  <%= stylesheet_link_tag 'app/assets/stylesheets/governance/v2/users/index.css' %>
+<% end %>
+
+<% content_for :javascript do %>
+<% end %>

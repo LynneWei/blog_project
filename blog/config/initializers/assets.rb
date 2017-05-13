@@ -11,7 +11,9 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 
 Rails.application.config.assets.precompile += %w( 
+  app/assets/stylesheets/governance/v2/shared/navigation_bar.css
   app/assets/stylesheets/governance/v2/dashboards/show.css
+  app/assets/stylesheets/governance/v2/shared/footer.css
 
   app/assets/images/governance/v2/dashboards/bg-1.jpg
 )

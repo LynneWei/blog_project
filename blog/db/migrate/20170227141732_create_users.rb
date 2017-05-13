@@ -4,7 +4,8 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :name, presence: true
       t.string :password, presence: true
       t.string :signature, presence: true
-      t.string :icon
+      # t.string :icon
+      t.references :icon, foreign_key: true
       t.timestamps
     end
   end
