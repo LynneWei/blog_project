@@ -5,7 +5,7 @@
 <% end %>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
+    <div class="col-sm-8 col-sm-offset-2 leave_messages_edit">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">请留下您的看法吧</h4>
@@ -29,12 +29,12 @@
   </div>
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
-      <h3>留言：</h3>
+      <h4>留言：</h4>
 
       <% @leave_messages.each do |lm| %>
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4><%= lm.commenter %><span class="pull-right"><%= lm.created_at %></span></h4>
+            <h4><%= lm.commenter %><span class="pull-right"><%= lm.created_at.strftime("%Y-%m-%d %H:%M:%S") %></span></h4>
           </div>
           <div class="panel-body">
             <%= lm.body %>
@@ -47,3 +47,17 @@
     <%= will_paginate @leave_messages, renderer: BootstrapPagination::Rails %>
   </div>
 </div>
+
+<% content_for :title do %>
+<% end %>
+
+<% content_for :meta do %>
+<% end %>
+
+<% content_for :style do %>
+  <%= stylesheet_link_tag "app/assets/stylesheets/governance/v2/leave_messages/index"%>
+<% end %>
+
+<% content_for :javascript do %>
+  
+<% end %>

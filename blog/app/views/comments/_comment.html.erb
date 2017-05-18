@@ -14,19 +14,21 @@
 </p> -->
 
 <% if comment.id != nil %>
+  <% if comment.commenter != nil %>
   <div class="panel panel-default">
     <div class="panel-heading">
       <%= comment.commenter %>
       <div class="pull-right">
-        <%= comment.created_at %>
+        <%= comment.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
       </div>
     </div>
     <div class="panel-body">
       <%= comment.body %>
     </div>
-    <div class="panel-footer">
+    <!-- <div class="panel-footer">
       <%= comment.id %>
-    </div>
+    </div> -->
   </div>
+  <% end %>
 <% end %>
 

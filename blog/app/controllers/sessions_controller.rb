@@ -10,11 +10,12 @@ class SessionsController < ApplicationController
     # logger.info @ses.inspect
     if @ses
       session[:user_id] = @ses.id
+      session[:user_name] = @ses.name
       session[:user_icon_id] = @ses.icon_id
       # @icon = Icon.find_by id: @ses.icon_id
       # session[:icon_id] = @icon.icon_path
-      # logger.info '@@@@!!@@@----------------------------------------'
-      # logger.info session[:icon_id].inspect
+      logger.info '@@@@!!@@@----------------------------------------'
+      logger.info session[:user_name].inspect
       redirect_to articles_path
     else
       render 'new'

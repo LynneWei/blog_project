@@ -4,20 +4,36 @@
       <li><%= link_to '首页', dashboard_path('~'), class: 'nav-link' %></li>
       <li class="dropdown">
         <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="">分类文章概览<span class="caret"></span></a>
+        <!-- <div></div> -->
         <ul class="dropdown-menu">
-          <li><%= link_to '技术类', articles_path %>
+          <li>
+          <!-- <a href="javascript:void(0)" class="nav-one">技术类</a> -->
+            <%= link_to '摄影类', articles_path(1), class: "nav-one" %>
             <div class="border-gradient"></div>
           </li>
-          <li><%= link_to '摄影类', articles_path %><div class="border-gradient"></div></li>
-          <li><%= link_to '旅游类', articles_path %><div class="border-gradient"></div></li>
+          <li>
+          <!-- <a href="javascript:void(0)" class="nav-two">摄影类</a> -->
+          <%= link_to '技术类', articles_path(2), class: "nav-two" %>
+          <div class="border-gradient"></div></li>
+          <li>
+          <!-- <a href="javascript:void(0)" class="nav-three">旅游类</a> -->
+          <%= link_to '旅游类', articles_path(3), class: "nav-three" %>
+          <div class="border-gradient"></div></li>
         </ul>
       </li>
       <li><%= link_to '留言板', leave_messages_path, class: 'nav-link' %></li>
-      <li><%= link_to '个人信息展示', users_path, class: 'nav-link' %></li>
+      <% if session[:user_id] != nil %>
+        <li><%= link_to '个人信息展示', users_path, class: 'nav-link' %></li>
+      <% end %>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to '登录', new_session_path, class: 'nav-link' %></li>
-      <li><%= link_to '注册', new_user_path, class: 'nav-link' %></li>
+      <% if session[:user_id] != nil %>
+        <li><%= link_to users_path, class: 'nav-link' do %><%= session[:user_name] %>，你好<% end %></li>
+        <!-- <li><%#= link_to '注销', nil, class: 'nav-link' %></li> -->
+      <% else %>
+        <li><%= link_to '登录', new_session_path, class: 'nav-link' %></li>
+        <li><%= link_to '注册', new_user_path, class: 'nav-link' %></li>
+      <% end %>
     </ul>
   </div>
 </nav>
