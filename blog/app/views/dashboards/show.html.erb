@@ -6,9 +6,20 @@
         <div class="row">
           <div class="col-sm-8 col-sm-offset-2">
             <h2 class="person-title">
-              欢迎来到BigBang的个人博客！<small><%= link_to '更多信息', users_path %></small>
+              欢迎来到
+              <% if session[:user_id] != nil %>
+                <%= @user.name %>
+              <% else %>
+                BigBang的个人博客！
+              <% end %>
+              <small><%= link_to '更多信息', users_path %></small>
             </h2>
-            <p class="person-infomation">BIGBANG是于2006年出道的韩国组合，由队长G-DRAGON、T.O.P、TAEYANG、DAESUNG、SEUNGRI五位成员组成。2007年5月，BIGBANG开始进行全国巡回演唱会，并于7月推出了第一张迷你专辑《谎言》。2008年8月8日，BIGBANG发行MINI专辑《STAND UP》，专辑中的歌曲《一天一天》在KTF连续六周蝉联第一名。2011年，BIGBANG成为历史上第一个获得MTV 欧洲音乐大奖“Worldwide Act”的亚洲组合，并于2012年上半年登上美国格莱美官方网页，成为首个被格莱美介绍的韩国歌手。2015年，BIGBANG回归韩国歌坛，同年5月至8月发行数字专辑《MADE》 ，四张MINI专辑总销量超过340万。</p>
+            <p class="person-infomation">
+            <% if session[:user_id] != nil %>
+              <%= @user.signature %>
+            <% else %>
+            BIGBANG是于2006年出道的韩国组合，由队长G-DRAGON、T.O.P、TAEYANG、DAESUNG、SEUNGRI五位成员组成。2007年5月，BIGBANG开始进行全国巡回演唱会，并于7月推出了第一张迷你专辑《谎言》。2008年8月8日，BIGBANG发行MINI专辑《STAND UP》，专辑中的歌曲《一天一天》在KTF连续六周蝉联第一名。2011年，BIGBANG成为历史上第一个获得MTV 欧洲音乐大奖“Worldwide Act”的亚洲组合，并于2012年上半年登上美国格莱美官方网页，成为首个被格莱美介绍的韩国歌手。2015年，BIGBANG回归韩国歌坛，同年5月至8月发行数字专辑《MADE》 ，四张MINI专辑总销量超过340万。
+            <% end %></p>
           </div>
         </div>
       </div>
@@ -20,9 +31,14 @@
         <div class="row">
           <div class="col-sm-8 col-sm-offset-2">
             <h2 class="person-title">
-              最新动态  <small><%= link_to '更多信息', articles_path %></small>
+              动态  <small><%= link_to '更多信息', articles_path(session[:user_id]) %></small>
             </h2>
-            <p class="person-infomation">BIGBANG是于2006年出道的韩国组合，由队长G-DRAGON、T.O.P、TAEYANG、DAESUNG、SEUNGRI五位成员组成。2007年5月，BIGBANG开始进行全国巡回演唱会，并于7月推出了第一张迷你专辑《谎言》。2008年8月8日，BIGBANG发行MINI专辑《STAND UP》，专辑中的歌曲《一天一天》在KTF连续六周蝉联第一名。2011年，BIGBANG成为历史上第一个获得MTV 欧洲音乐大奖“Worldwide Act”的亚洲组合，并于2012年上半年登上美国格莱美官方网页，成为首个被格莱美介绍的韩国歌手。2015年，BIGBANG回归韩国歌坛，同年5月至8月发行数字专辑《MADE》 ，四张MINI专辑总销量超过340万。</p>
+            <p class="person-infomation">
+            <% if session[:user_id] != nil %>
+              <%= @article.text %>
+            <% else %>
+            BIGBANG是于2006年出道的韩国组合，由队长G-DRAGON、T.O.P、TAEYANG、DAESUNG、SEUNGRI五位成员组成。2007年5月，BIGBANG开始进行全国巡回演唱会，并于7月推出了第一张迷你专辑《谎言》。2008年8月8日，BIGBANG发行MINI专辑《STAND UP》，专辑中的歌曲《一天一天》在KTF连续六周蝉联第一名。2011年，BIGBANG成为历史上第一个获得MTV 欧洲音乐大奖“Worldwide Act”的亚洲组合，并于2012年上半年登上美国格莱美官方网页，成为首个被格莱美介绍的韩国歌手。2015年，BIGBANG回归韩国歌坛，同年5月至8月发行数字专辑《MADE》 ，四张MINI专辑总销量超过340万。
+            <% end %></p>
           </div>
         </div>
       </div>
@@ -34,9 +50,15 @@
         <div class="row">
           <div class="col-sm-8 col-sm-offset-2">
             <h2 class="person-title">
-              最新留言  <small><%= link_to '更多信息', leave_messages_path %></small>
+              留言  <small><%= link_to '更多信息', leave_messages_path %></small>
             </h2>
-            <p class="person-infomation">BIGBANG是于2006年出道的韩国组合，由队长G-DRAGON、T.O.P、TAEYANG、DAESUNG、SEUNGRI五位成员组成。2007年5月，BIGBANG开始进行全国巡回演唱会，并于7月推出了第一张迷你专辑《谎言》。2008年8月8日，BIGBANG发行MINI专辑《STAND UP》，专辑中的歌曲《一天一天》在KTF连续六周蝉联第一名。2011年，BIGBANG成为历史上第一个获得MTV 欧洲音乐大奖“Worldwide Act”的亚洲组合，并于2012年上半年登上美国格莱美官方网页，成为首个被格莱美介绍的韩国歌手。2015年，BIGBANG回归韩国歌坛，同年5月至8月发行数字专辑《MADE》 ，四张MINI专辑总销量超过340万。</p>
+            <p class="person-infomation">
+            <% if session[:user_id] != nil %>
+              <%= @leaveMessage.body %>
+            <% else %>
+            BIGBANG是于2006年出道的韩国组合，由队长G-DRAGON、T.O.P、TAEYANG、DAESUNG、SEUNGRI五位成员组成。2007年5月，BIGBANG开始进行全国巡回演唱会，并于7月推出了第一张迷你专辑《谎言》。2008年8月8日，BIGBANG发行MINI专辑《STAND UP》，专辑中的歌曲《一天一天》在KTF连续六周蝉联第一名。2011年，BIGBANG成为历史上第一个获得MTV 欧洲音乐大奖“Worldwide Act”的亚洲组合，并于2012年上半年登上美国格莱美官方网页，成为首个被格莱美介绍的韩国歌手。2015年，BIGBANG回归韩国歌坛，同年5月至8月发行数字专辑《MADE》 ，四张MINI专辑总销量超过340万。
+            <% end %>
+            </p>
           </div>
         </div>
       </div>

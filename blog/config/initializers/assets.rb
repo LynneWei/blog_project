@@ -18,8 +18,14 @@ Rails.application.config.assets.precompile += %w(
   app/assets/stylesheets/governance/v2/articles/index.css
   app/assets/stylesheets/governance/v2/articles/show.css
   app/assets/stylesheets/governance/v2/leave_messages/index.css
-
-  app/assets/stylesheets/governance/v2/shared/navigation_bar.js
+  app/assets/stylesheets/governance/v2/users/new.css
+  app/assets/stylesheets/shared/bootstrap.css
+  
+  app/assets/javascripts/shared/jquery-3.1.1.min.js
+  app/assets/javascripts/shared/bootstrap.min.js
+  app/assets/javascripts/governance/v2/shared/navigation_bar.js
+  app/assets/javascripts/governance/v2/users/new.js
+  app/assets/javascripts/governance/v2/users/index.js
 
   app/assets/images/governance/v2/users/icon_01.png
 

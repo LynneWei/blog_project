@@ -18,9 +18,9 @@
         <span class="pull-left">
           <%= @article.created_at.strftime("%Y-%m-%d %H:%M:%S")%>
         </span>
-        <span class="pull-right">
-          <%= render 'push_praises/push_praise' %>
-        </span>
+        <!-- <span class="pull-right">
+          <%#= render 'push_praises/push_praise' %>
+        </span> -->
         <span class="pull-right">
           <a class="btn praise-btn" data-toggle="modal" data-target="#myModal">评论</a>
         </span>
@@ -59,7 +59,12 @@
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
       <h4>评论：</h4>
+      <%#= @article.comments typeof object %>
+      <%# if @article.comments.empty? %>
         <%= render @article.comments %>
+      <%# else %>
+        <!-- <p>还没有评论！快来占沙发吧！</p> -->
+      <%# end %>
     </div>
   </div>
   
@@ -76,24 +81,24 @@
 <% end %>
 
 <% content_for :javascript do %>
-  $('.praise-btn').click(function(){
+  <!-- $('.praise-btn').click(function(){
     $.ajax({
      type: "GET",
      url: "test.json",
      data: {count: $(".praise-count").val()+1},
      dataType: "json",
      success: function(data){
-         <!-- $('#resText').empty();   //清空resText里面的所有内容 -->
+          $('#resText').empty();   //清空resText里面的所有内容 -->
          <!-- var html = '';  -->
          <!-- $.each(data, function(){ -->
-      var praise_count = $(".praise-count").val();
-      $(".praise-count").val(praise_count++);
+      <!-- var praise_count = $(".praise-count").val();
+      $(".praise-count").val(praise_count++); -->
                <!-- html += '<div class="comment"><h6>' + comment['username']
                          + ':</h6><p class="para"' + comment['content']
                          + '</p></div>'; -->
         <!--  }); -->
         <!-- $('#resText').html(html); -->
-      }
+     <!--  }
     });
-  })
+  }) -->
 <% end %>

@@ -16,9 +16,25 @@ class UsersController < ApplicationController
   end
 
   def index
+    @user = User.find(session[:user_id])
+    if params[:signature] != nil
+      # logger.info '@---------$$$$$$$$$-------------------------------'
+      # logger.info @user.signature.inspect
+      @user.update_attribute(:signature, params[:signature])
+      # if @user.save
+      #   # logger.info '###$$$$-------------------------------'
+      #   # logger.info  @user.signature.inspect
+      # else
+      #   logger.info '^^^^^^--------------------------------'
+      # end
+      # logger.info '@---------$$$$**********$$$$$-------------------------------'
+      # logger.info @user.signature.inspect
+    else
+    end
+    # @user.update(user_signature)
     @icon = Icon.find_by id: session[:user_icon_id]
-    logger.info '@----------------------------------------'
-    logger.info @icon.icon_path.inspect
+    # logger.info '@----------------------------------------'
+    # logger.info @icon.icon_path.inspect
   end
 
   private

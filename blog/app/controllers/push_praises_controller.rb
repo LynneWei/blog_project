@@ -1,8 +1,11 @@
 class PushPraisesController < ApplicationController
   def create
-    @article=Article.find(params[:article_id])
-    @article.push_praises.create(article_id:params[:article_id])
-    redirect_to article_path(@article)
+    @article = Article.find(params[:article_id])
+    @priase = PushPraise.new
+    @priase.count=params[:count].strip
+    # comment.body=params[:body].strip
+    @priase.article_id = params[:article_id]
+    @priase.save
   end
 
   def destroy

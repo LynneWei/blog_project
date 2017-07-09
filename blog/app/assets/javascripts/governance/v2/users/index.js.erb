@@ -1,0 +1,18 @@
+$(function()
+{
+  $('.signature-form').hide();
+  // $('.edit-signature').text("修改签名");
+  $('.edit-signature').click(function()
+    {
+      if($('.edit-signature').text()=="收起"){
+        console.info($('.edit-signature').text()=="收起");
+        $('.signature-form').hide();
+        $(this).text("修改签名");
+      }else if($('.edit-signature').text()=="修改签名"){
+        $('.signature-form').show();
+        $(this).text("收起");
+      }
+    })
+  
+  
+})

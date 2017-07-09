@@ -24,7 +24,10 @@
               <p class="second-content">......</p>
             </div>
             <div class="panel-footer">
+            <% if session[:user_id] != nil %>
               <%= link_to '删除', article_path(article), method: :delete, data: {confirm: "确定删除?"} %>
+            <% else %>
+            <% end %>
               <%= link_to '查看详情', article_path(article) %>
             </div>
           </div>
@@ -88,7 +91,10 @@
     </div>
   </div>
 </div>
-<%= link_to '创建文章', new_article_path %>
+<% if session[:user_id] != nil %>
+  <%= link_to '创建文章', new_article_path %>
+<% else %>
+<% end %>
 
 <% content_for :title do %>
 <% end %>

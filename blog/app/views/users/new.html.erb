@@ -1,6 +1,7 @@
-<div class="container-fluid">
-  <h1 class="text-center">注册</h1>
-  <div class="col-sm-4 col-sm-offset-4 panel panel-default">
+<div class="container-fluid login">
+<div class="login-bg-drop">
+  <!-- <h1 class="text-center">注册</h1> -->
+  <div class="col-sm-4 col-sm-offset-4 panel panel-default login-form">
     <div class="panel-body">
       <%= form_for @user, class: '' do |f| %>
         <div class="form-group">
@@ -11,9 +12,9 @@
           <%= f.label '密码', class: 'control-label' %>
           <%= f.text_field :password, class: 'form-control' %>
         </div>
-        <div class="form-group">
+        <div class="form-group select-icon-block">
           <%= f.label 'icon', class: 'control-label' %>
-          <%= f.text_field :icon_id, class: 'form-control' %>
+          <%= f.text_field :icon_id, class: 'form-control select-icon' %>
         </div>
         <div class="form-group">
           <%= f.submit '注册', class: 'btn btn-primary form-control' %>
@@ -21,6 +22,7 @@
         <p class="text-right"><small>已有账号？快去<%= link_to '登录', new_session_path %></small></p>
       <% end %>
     </div>
+  </div>
   </div>
 </div>
 
@@ -31,6 +33,7 @@
 <% end %>
 
 <% content_for :style do %>
+  <%= stylesheet_link_tag 'app/assets/stylesheets/governance/v2/users/new.css' %>
 <% end %>
 
 <% content_for :javascript do %>

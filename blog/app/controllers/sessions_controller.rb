@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       # session[:icon_id] = @icon.icon_path
       logger.info '@@@@!!@@@----------------------------------------'
       logger.info session[:user_name].inspect
-      redirect_to articles_path
+      redirect_to dashboard_path("~")
     else
       render 'new'
     end 
